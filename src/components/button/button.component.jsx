@@ -1,9 +1,4 @@
-
-/*
-Inverted Button
-Default Button
-Google Sign In
-*/
+import '../button/button.styles.scss'
 
 const BUTTON_TYPES = {
     google: 'google-sign-in',
