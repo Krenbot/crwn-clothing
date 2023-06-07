@@ -7,11 +7,13 @@ const BUTTON_TYPES = {
 
 const Button = ({ children, buttonType, ...otherProps }) => {
     return (
-        <button className={`button-container ${BUTTON_TYPES[buttonType]}`}{...otherProps}
+        <button
+            className={`button-container ${BUTTON_TYPES[buttonType]}`}
+            {...otherProps}
         >
             {children}
-        </button >
-    )
-}
+        </button>
+    );
+};
 
 export default Button;
