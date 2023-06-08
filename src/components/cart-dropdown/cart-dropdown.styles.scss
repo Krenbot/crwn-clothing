@@ -1,6 +1,6 @@
 .cart-dropdown-container {
     position: absolute;
-    width: 240px;
+    width: 300px; // Changed from 240px to have the button all on one line
     height: 340px;
     display: flex;
     flex-direction: column;
@@ -17,13 +17,18 @@
     }
 
     .cart-items {
-        height: 240px;
+        height: 100%; // Filled the height to match the container and fix button spacing
         display: flex;
         flex-direction: column;
-        overflow-y: scroll;
+        overflow: scroll;
     }
 
     button {
         margin-top: auto;
     }
+}
+
+::-webkit-scrollbar {
+    // Remove scrollbar
+    display: none;
 }
