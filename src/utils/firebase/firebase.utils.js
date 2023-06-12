@@ -16,10 +16,12 @@ import {
     getDoc,
     setDoc,
     collection,
-    writeBatch
+    writeBatch,
+    query,
+    getDocs
 } from 'firebase/firestore'
 
-// Your web app's Firebase configuration
+// Web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDA0YrcagSjP1gJxROqv0Zd810q7pcIquM",
     authDomain: "crwn-clothing-db-22773.firebaseapp.com",
@@ -46,7 +48,11 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 export const db = getFirestore();
 
-export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+export const addCollectionAndDocuments = async (
+    collectionKey,
+    objectsToAdd,
+    // Additional fields...
+) => {
     const collectionRef = collection(db, collectionKey);
     const batch = writeBatch(db);
 
@@ -57,6 +63,20 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
 
     await batch.commit()
     console.log('done')
+};
+
+export const getCategoriesAndDocuments = async () => {
+    const collectionRef = collection(db, 'categories');
+    const q = query(collectionRef);
+
+    const querySnapshot = await getDocs(q);
+    const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+        const { title, items } = docSnapshot.data();
+        acc[title.toLowerCase()] = items;
+        return acc;
+    }, {})
+
+    return categoryMap;
 };
 
 export const createUserDocumentFromAuth = async (
