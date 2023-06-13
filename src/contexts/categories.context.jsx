@@ -11,7 +11,7 @@ export const CategoriesProvider = ({ children }) => {
     useEffect(() => {
         // async in useEffect - make own async func within callback, then call inside of same callback after initialization
         const getCategoriesMap = async () => {
-            const categoryMap = await getCategoriesAndDocuments();
+            const categoryMap = await getCategoriesAndDocuments('categories');
             setCategoriesMap(categoryMap);
         };
 
