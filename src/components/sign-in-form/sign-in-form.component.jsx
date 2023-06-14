@@ -1,11 +1,10 @@
 import { useState } from "react";
 import {
     signInWithGooglePopup,
-    createUserDocumentFromAuth,
     signInAuthUserWithEmailAndPassword
 } from '../../utils/firebase/firebase.utils';
 import FormInput from "../form-input/form-input.component";
-import Button from '../button/button.component'
+import Button, { BUTTON_TYPES } from '../button/button.component'
 import '../sign-in-form/sign-in-form.styles.scss';
 
 const defaultFormFields = {
@@ -80,7 +79,7 @@ const SignInForm = () => {
                     <Button type='submit'>Sign In</Button>
                     <Button
                         type='button'
-                        buttonType='google'
+                        buttonType={BUTTON_TYPES.google}
                         onClick={signInWithGoogle}>Google Sign In</Button>
                 </div>
 
