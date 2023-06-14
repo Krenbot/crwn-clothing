@@ -28,7 +28,9 @@ const Navigation = () => {
                     </Link>
 
                     {currentUser ? (
-                        <span className='nav-link' onClick={signOutUser}>SIGN OUT</span>
+                        <span className='nav-link' onClick={signOutUser}>
+                            SIGN OUT
+                        </span>
                     ) : (
                         <Link className='nav-link' to='/auth'>
                             SIGN IN
@@ -43,4 +45,5 @@ const Navigation = () => {
     );
 };
 
-export default Navigation
+
+export default Navigation;
