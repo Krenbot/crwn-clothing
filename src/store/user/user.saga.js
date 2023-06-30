@@ -18,13 +18,11 @@ export function* getSnapshotFromUserAuth(userAuth, additionalDetails) {
             userAuth,
             additionalDetails
         );
-        yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }))
-        console.log(userSnapshot)
-        console.log(userSnapshot.data())
+        yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
     } catch (error) {
         yield put(signInFailed(error));
     }
-};
+}
 
 export function* signInWithGoogle() {
     try {
