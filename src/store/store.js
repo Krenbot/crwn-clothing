@@ -9,7 +9,6 @@ import { rootReducer } from './root-reducer';
 
 const sagaMiddleware = createSagaMiddleware()
 
-
 const middleWares = [
     process.env.NODE_ENV === 'development' && logger,
     sagaMiddleware
