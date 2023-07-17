@@ -9,8 +9,6 @@ import App from './App';
 import { store, persistor } from './store/store';
 import { stripePromise } from './stripe/stripe.utils';
 
-import './index.scss';
-
 const rootElement = document.getElementById('root');
 
 render(
