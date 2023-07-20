@@ -13,8 +13,8 @@ describe('Cart Icon Tests', () => {
             preloadedState: {
                 cart: {
                     cartItems: initialCartItems
-                }
-            }
+                },
+            },
         });
 
         const cartIconElement = screen.getByText('1');
