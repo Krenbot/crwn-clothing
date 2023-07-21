@@ -3,7 +3,6 @@ import * as reactRedux from 'react-redux';
 
 import Navigation from '../navigation.component';
 import { renderWithProviders } from '../../../utils/test/test.utils';
-import { signOutStart } from '../../../store/user/user.action';
 
 import * as userAction from "../../../store/user/user.action";
 
@@ -17,6 +16,7 @@ describe('Navigation Tests', () => {
     beforeEach(() => {
         useDispatchMock.mockImplementation(() => () => { });
     });
+
     afterEach(() => {
         useDispatchMock.mockClear();
     });
@@ -98,5 +98,4 @@ describe('Navigation Tests', () => {
         expect(useDispatchMock).toHaveBeenCalled();
         expect(signOutStartAction).toHaveBeenCalled();
     });
-
 });
