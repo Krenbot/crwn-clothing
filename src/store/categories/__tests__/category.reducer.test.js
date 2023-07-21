@@ -28,7 +28,7 @@ describe('Category reducer tests', () => {
                 items: [
                     { id: 1, name: 'Product 1' },
                     { id: 2, name: 'Product 2' },
-                ]
+                ],
             },
             {
                 title: 'womens',
@@ -36,9 +36,9 @@ describe('Category reducer tests', () => {
                 items: [
                     { id: 3, name: 'Product 3' },
                     { id: 4, name: 'Product 4' },
-                ]
-            }
-        ]
+                ],
+            },
+        ];
 
         const expectedState = {
             ...CATEGORIES_INITIAL_STATE,
